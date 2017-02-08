@@ -1,0 +1,25 @@
+{
+  "name": "stoutsource.com",
+  "version": "1.0.0",
+  "description": "StoutSource Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoutsource/stoutsource.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stoutsource/stoutsource.com/issues"
+  },
+  "homepage": "https://github.com/stoutsource/stoutsource.com#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.5.0"
+  }
+}
