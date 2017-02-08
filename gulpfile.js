@@ -22,6 +22,13 @@ gulp.task('sass', function () {
     .pipe(browserSync.stream());
 });
 
+// Copy js to dist directory
+gulp.task('js', function () {
+  return gulp.src("src/js/**/*.js")
+    .pipe(gulp.dest("dist/js"))
+    .pipe(browserSync.stream());
+});
+
 // Copy html to dist directory
 gulp.task('html', function () {
   return gulp.src("src/*.html")
