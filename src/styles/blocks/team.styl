@@ -1,0 +1,61 @@
+$teamBorders = lighten(mix(#222, $brown, 80%), 10%)
+
+.team
+  box-sizing border-box
+  padding 20px
+  background mix(#222, $brown, 80%)
+  color #fff
+
+  &__member
+    min-height 100px
+    border 1px solid $teamBorders
+
+    @media (max-width $sm)
+      min-height 302px
+      margin-bottom 30px
+
+    @media (max-width $xs)
+      max-width 300px
+      margin 0 auto 30px
+
+    &__name
+      padding 5px 10px
+      font-size 16px
+
+    &__avatar
+      width 200px
+      height 200px
+      border 1px solid $teamBorders
+      margin 5px auto 10px
+
+    &__desc
+      padding 5px 10px 10px
+
+    &__social
+      text-align center
+      margin-bottom 10px
+      height 20px
+
+      a
+        &:not(:last-child)
+          margin-right 10px
+
+  &__label
+    display inline-block
+    margin-right 4px
+    padding 0px 4px
+    background $teamBorders
+    border-radius 2px
+    font-size 12px
+
+    &--lead
+      background #e87272
+
+    &--fullstack
+      background #3872e8
+
+    &--backend
+      background #71a572
+
+    &--frontend
+      background #816a99

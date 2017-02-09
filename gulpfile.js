@@ -7,7 +7,7 @@ var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 
 // Static Server + watching sass/js/pug files
-gulp.task('watch', ['stylus', 'js', 'pug'], function () {
+gulp.task('watch', ['stylus', 'js', 'pug', 'fonts'], function () {
   browserSync.init({
     server: './dist',
     notify: false
@@ -46,13 +46,19 @@ gulp.task('js', function () {
     .pipe(browserSync.stream());
 });
 
-// Copy pug to dist directory
+// Compile .pug to .html
 gulp.task('pug', function () {
   return gulp.src('src/views/*.pug')
     .pipe(plumber())
     .pipe(pug())
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
+});
+
+// Copy fonts to dist directory
+gulp.task('fonts', function () {
+  return gulp.src('src/fonts/*')
+    .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('default', ['watch']);
