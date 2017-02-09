@@ -6,4 +6,20 @@ html(lang='en')
     title Document
     link(rel='stylesheet', href='css/index.css')
   body
-    | Hello world
+    header.header
+      a.header__logo(href='/') Logo
+
+      nav.header__menu
+        a.header__link(href='#services') Services
+        a.header__link(href='#team') Team
+        a.header__link(href='#projects') Projects
+        a.header__link(href='#contacts') Contacts
+
+    section.welcome
+      .welcome__scroll
+
+    section.services#services
+        div.services__title
+          h1 Services
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='js/app.js')
