@@ -1,6 +1,23 @@
-# Run project
-To run project just type this in console in root of project
+# Usage
+To start working with boilerplate just do
 ```
-npm i && gulp watch
+npm i && gulp
 ```
-or just do **npm i** and then doubleclick on **index.html** in /dist folder
+
+# Structure
+```
+├── src/                       # Sources
+│   ├── libs/                  # Libraries downloaded using Bower
+│   ├── views/                 # Pug (Jade) views
+│   │   └── index.pug          # Index page file
+│   └── styles/                # Styles
+│       └── index.styl         # Styles file for index page
+├── dist/                      # Build destiny
+│   ├── css/                   # CSS files (compiled .styl)
+│   └── index.html             # Index page html file
+├── .bowerrc                   # Bower package manager configuration file
+├── .gitignore                 # List of files to be ignored when pushing on Git
+├── gulpfile.js                # Gulp tasks file
+├── package.json               # Modules dependencies etc.
+└── README.md                  # Documentation
+```
