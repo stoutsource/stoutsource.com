@@ -49,6 +49,7 @@ gulp.task('js', function () {
 // Copy pug to dist directory
 gulp.task('pug', function () {
   return gulp.src('src/views/*.pug')
+    .pipe(plumber())
     .pipe(pug())
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
