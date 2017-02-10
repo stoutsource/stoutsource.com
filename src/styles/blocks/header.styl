@@ -8,9 +8,96 @@
   background #fff
   font-size 22px
 
+  @media (max-width $xs)
+    padding 0 10px
+
+  &__logo
+    display flex
+    height 100%
+    align-items center
+    padding 0 20px
+
   &__menu
     height 100%
     display flex
+
+    @media (max-width $xs)
+      display none
+
+    &--mobile
+      position fixed
+      top 0
+      left 0
+      display flex
+      flex-direction column
+      height auto
+      width 100%
+      padding 20px 0
+      background #fff
+      z-index 10
+      will-change opacity
+      animation fadeIn .25s
+
+      .header__link
+        padding 20px 0
+        justify-content center
+        height 60px
+        will-change transform
+        animation slideInTop .5s
+
+  &__hamburger
+    display none
+    height 100%
+    justify-content center
+    flex-direction column
+    font-size 14px
+    padding 0 20px
+    will-change background
+    transition background .15s
+
+    &:active
+      background $gold
+
+    @media (max-width $xs)
+      position fixed
+      display flex
+      z-index 11
+      top 10px
+      right 20px
+      background #fff
+      border-radius 4px
+      height 40px
+      padding 0 10px
+
+    span
+      display block
+      width 30px
+      height 2px
+      background #000
+      will-change transform, opacity
+      transition transform .25s, opacity .15s
+
+      &:nth-child(1)
+        transform translate3d(0, -8px, 0) rotateZ(0deg)
+
+      &:nth-child(2)
+        transform translate3d(0, 0, 0)
+        opacity 1
+
+      &:nth-child(3)
+        transform translate3d(0, 8px, 0) rotateZ(0deg)
+
+    &--active
+      span
+        &:nth-child(1)
+          transform translate3d(0, 2px, 0) rotateZ(45deg)
+
+        &:nth-child(2)
+          transform translate3d(0, 0, 0)
+          opacity 0
+
+        &:nth-child(3)
+          transform translate3d(0, -2px, 0) rotateZ(-45deg)
 
   &__link
     color: $brown
