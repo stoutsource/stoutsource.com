@@ -3,6 +3,7 @@ var stylus = require('gulp-stylus');
 var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
 var pug = require('gulp-pug');
+var uglify = require('gulp-uglifyjs');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 
@@ -42,6 +43,8 @@ gulp.task('stylus', function () {
 // Copy js to dist directory
 gulp.task('js', function () {
   return gulp.src('src/js/**/*.js')
+    .pipe(plumber())
+    .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 });

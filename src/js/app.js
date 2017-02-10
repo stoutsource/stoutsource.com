@@ -20,6 +20,13 @@ $('.welcome__scroll').click(function () {
   return false;
 });
 
+$('.welcome__btn').click(function () {
+  $root.animate({
+    scrollTop: $( $.attr(this, 'href') ).offset().top
+  }, 500);
+  return false;
+});
+
 $('.header__hamburger').click(function () {
   $(this).toggleClass('header__hamburger--active');
   $('.header__menu').toggleClass('header__menu--mobile');

@@ -9,7 +9,8 @@
     "gulp-csso": "^2.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.2.0",
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglifyjs": "^0.6.2"
   },
   "author": "Nikita Borisowsky",
   "license": "MIT"

@@ -1,13 +1,16 @@
+- var companyName = 'StoutSource';
+
 <!DOCTYPE html>
 html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
-    title Document
+    title #{companyName}
     link(rel='stylesheet', href='css/index.css')
   body
     header.header
-      a.header__logo(href='/') Logo
+      a.header__logo(href='/')
+        img(src='', alt=companyName)
 
       nav.header__menu
         a.header__link(href='#services') Services
@@ -22,12 +25,14 @@ html(lang='en')
 
     section.welcome
       a.welcome__scroll(href='#services')
+      .welcome__message Tagline text <br> more tagline text! <br>
+        a.btn.btn--bg.welcome__btn(href='#contacts') Contact us!
 
     section.services#services
       .section-title
         h1 Services
 
-    section.team
+    section.team#team
       .section-title
         h1 Team
 
@@ -43,6 +48,8 @@ html(lang='en')
               .team__member__avatar
 
               .team__member__social
+                a.social__icon(href='', title='Website', target='_blank')
+                  i.fa.fa-globe
                 a.social__icon(href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
                 a.social__icon(href='', title='Facebook', target='_blank')
@@ -64,6 +71,8 @@ html(lang='en')
               .team__member__avatar
 
               .team__member__social
+                a.social__icon(href='', title='Website', target='_blank')
+                  i.fa.fa-globe
                 a.social__icon(href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
                 a.social__icon(href='', title='Facebook', target='_blank')
@@ -85,6 +94,8 @@ html(lang='en')
               .team__member__avatar
 
               .team__member__social
+                a.social__icon(href='', title='Website', target='_blank')
+                  i.fa.fa-globe
                 a.social__icon(href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
                 a.social__icon(href='', title='Facebook', target='_blank')
@@ -106,6 +117,8 @@ html(lang='en')
               .team__member__avatar
 
               .team__member__social
+                a.social__icon(href='', title='Website', target='_blank')
+                  i.fa.fa-globe
                 a.social__icon(href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
                 a.social__icon(href='', title='Facebook', target='_blank')
@@ -116,7 +129,22 @@ html(lang='en')
                   i.fa.fa-instagram
 
               .team__member__desc
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde assumenda ullam culpa consectetur alias, blanditiis reprehenderit, harum quod impedit ut, quidem pariatur maiores voluptate? Aperiam magni adipisci molestiae ipsam reprehenderit?
+                | Moya vyorstka w dele - brauzeri vspoteli! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde assumenda ullam culpa consectetur alias, blanditiis reprehenderit, harum quod impedit ut, quidem pariatur maiores voluptate? Aperiam magni adipisci molestiae ipsam reprehenderit?
+
+    section.projects#projects
+      .section-title
+        h1 Projects
+        .container
+          .row
+            .col-md-6 Join Kaliningrad
+            .col-md-6 Postcardbox
+
+    section.contacts#contacts
+      .section-title
+        h1 Contacts
+
+    footer.footer
+      | 2017 &copy #{companyName}
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='js/app.js')
