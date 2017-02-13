@@ -1,15 +1,17 @@
 // StoutSource
 console.log('%cNu zdorovo!', 'font-size: 32pt');
 
-var $root = $('html, body');
+const $root = $('html, body');
+const headerMenu = $('.header__menu');
+const hamburgerIcon = $('.header__hamburger');
 
 $('.header__link').click(function () {
   $root.animate({
     scrollTop: $( $.attr(this, 'href') ).offset().top
   }, 500);
 
-  $('.header__hamburger').removeClass('header__hamburger--active');
-  $('.header__menu').removeClass('header__menu--mobile');
+  hamburgerIcon.removeClass('header__hamburger--active');
+  headerMenu.removeClass('header__menu--mobile');
   return false;
 });
 
@@ -27,7 +29,7 @@ $('.welcome__btn').click(function () {
   return false;
 });
 
-$('.header__hamburger').click(function () {
+hamburgerIcon.click(function () {
   $(this).toggleClass('header__hamburger--active');
-  $('.header__menu').toggleClass('header__menu--mobile');
+  headerMenu.toggleClass('header__menu--mobile');
 });
