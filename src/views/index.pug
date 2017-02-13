@@ -1,12 +1,50 @@
-- var companyName = 'StoutSource';
+- const companyName = 'StoutSource';
+- const companyTitle = `${companyName} — title text`;
+- const companyDescription = `${companyName} — description text`;
+- const companyKeywords = `${companyName}, ...`;
 
-<!DOCTYPE html>
+doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    title #{companyTitle}
+
+    //- Responsive
     meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
-    title #{companyName}
+    meta(name='HandheldFriendly', content='True')
+    meta(name='MobileOptimized', content=320)
+
+    //- Schema.org
+    script(type='application/ld+json').
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "#{companyName}",
+        "url": "https://stoutsource.com",
+        "email": "",
+        "logo": "",
+        "description": "#{companyDescription}",
+      }
+
+    //- OpenGraph
+    meta(property='og:title', content=companyTitle)
+    meta(property='og:site_name', content=companyTitle)
+    meta(property="og:description", content=companyDescription)
+    meta(property='og:url', content='https://stoutsource.com')
+    meta(property='og:keywords', content=companyKeywords)
+    meta(property='og:image', content='')
+
+    meta(name='author', content=companyName)
+    meta(name='description', content=companyDescription)
+    meta(name='keywords', content=companyKeywords)
+
+    meta(name='robots', content='index, follow')
+
     link(rel='stylesheet', href='css/index.css')
+    link(rel='shortcut icon', type='image/x-icon', href='')
+
   body
     header.header
       a.header__logo(href='/')
@@ -39,105 +77,124 @@ html(lang='en')
       .container
         .row
           .col-md-3.col-sm-6
-            .team__member
-              .team__member__name Nikita Chebykin
+            .team__member(itemtype='http://schema.org/Person', itemscope)
+              .team__member__name(itemprop='name') Nikita Chebykin
                 .team__member__labels
-                  span.team__label.team__label--lead Lead
-                  span.team__label.team__label--fullstack Full-stack
+                  span.team__label.team__label--lead(itemprop='jobTitle') Lead
+                  span.team__label.team__label--fullstack(itemprop='jobTitle') Full-stack
 
-              .team__member__avatar
+              img.team__member__avatar(itemprop='image', alt='Nikita Chebykin')
 
               .team__member__social
-                a.social__icon(href='', title='Website', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Website', target='_blank')
                   i.fa.fa-globe
-                a.social__icon(href='', title='Vkontakte', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
-                a.social__icon(href='', title='Facebook', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Facebook', target='_blank')
                   i.fa.fa-facebook-official
-                a.social__icon(href='', title='GitHub', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='GitHub', target='_blank')
                   i.fa.fa-github
-                a.social__icon(href='', title='Instagram', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Instagram', target='_blank')
                   i.fa.fa-instagram
 
-              .team__member__desc
+              .team__member__desc(itemprop='knows')
                 | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum dolorem itaque maiores sint? Ducimus quod, ea enim, nobis beatae illo numquam nulla maxime, vel soluta a animi! Pariatur, praesentium, est.
 
           .col-md-3.col-sm-6
-            .team__member
-              .team__member__name Ivan Efremov
+            .team__member(itemtype='http://schema.org/Person', itemscope)
+              .team__member__name(itemprop='name') Ivan Efremov
                 .team__member__labels
-                  span.team__label.team__label--backend Back-end
+                  span.team__label.team__label--backend(itemprop='jobTitle') Back-end
 
-              .team__member__avatar
+              img.team__member__avatar(itemprop='image', alt='Ivan Efremov')
 
               .team__member__social
-                a.social__icon(href='', title='Website', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Website', target='_blank')
                   i.fa.fa-globe
-                a.social__icon(href='', title='Vkontakte', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
-                a.social__icon(href='', title='Facebook', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Facebook', target='_blank')
                   i.fa.fa-facebook-official
-                a.social__icon(href='', title='GitHub', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='GitHub', target='_blank')
                   i.fa.fa-github
-                a.social__icon(href='', title='Instagram', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Instagram', target='_blank')
                   i.fa.fa-instagram
 
-              .team__member__desc
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo unde quod eos, id, consequuntur totam. Dolores quaerat officia eveniet voluptatum autem blanditiis dignissimos, quia adipisci, eos nisi numquam mollitia sint.
+              .team__member__desc(itemprop='knows')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum dolorem itaque maiores sint? Ducimus quod, ea enim, nobis beatae illo numquam nulla maxime, vel soluta a animi! Pariatur, praesentium, est.
 
           .col-md-3.col-sm-6
-            .team__member
-              .team__member__name Alex Sharypin
+            .team__member(itemtype='http://schema.org/Person', itemscope)
+              .team__member__name(itemprop='name') Alex Sharypin
                 .team__member__labels
-                  span.team__label.team__label--backend Back-end
+                  span.team__label.team__label--backend(itemprop='jobTitle') Back-end
 
-              .team__member__avatar
+              img.team__member__avatar(itemprop='image', alt='Alex Sharypin')
 
               .team__member__social
-                a.social__icon(href='', title='Website', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Website', target='_blank')
                   i.fa.fa-globe
-                a.social__icon(href='', title='Vkontakte', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
-                a.social__icon(href='', title='Facebook', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Facebook', target='_blank')
                   i.fa.fa-facebook-official
-                a.social__icon(href='', title='GitHub', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='GitHub', target='_blank')
                   i.fa.fa-github
-                a.social__icon(href='', title='Instagram', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Instagram', target='_blank')
                   i.fa.fa-instagram
 
-              .team__member__desc
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus excepturi labore, hic accusantium ipsa amet non. Officiis, odit ipsum ducimus, iure vitae enim reiciendis quod, facere ad doloremque aspernatur, sapiente.
+              .team__member__desc(itemprop='knows')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum dolorem itaque maiores sint? Ducimus quod, ea enim, nobis beatae illo numquam nulla maxime, vel soluta a animi! Pariatur, praesentium, est.
 
           .col-md-3.col-sm-6
-            .team__member
-              .team__member__name Nikita Borisowsky
+            .team__member(itemtype='http://schema.org/Person', itemscope)
+              .team__member__name(itemprop='name') Nikita Borisowsky
                 .team__member__labels
-                  span.team__label.team__label--frontend Front-end
+                  span.team__label.team__label--frontend(itemprop='jobTitle') Front-end
 
-              .team__member__avatar
+              img.team__member__avatar(itemprop='image', alt='Nikita Borisowsky')
 
               .team__member__social
-                a.social__icon(href='', title='Website', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Website', target='_blank')
                   i.fa.fa-globe
-                a.social__icon(href='', title='Vkontakte', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Vkontakte', target='_blank')
                   i.fa.fa-vk
-                a.social__icon(href='', title='Facebook', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Facebook', target='_blank')
                   i.fa.fa-facebook-official
-                a.social__icon(href='', title='GitHub', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='GitHub', target='_blank')
                   i.fa.fa-github
-                a.social__icon(href='', title='Instagram', target='_blank')
+                a.social__icon(itemprop='sameAs', href='', title='Instagram', target='_blank')
                   i.fa.fa-instagram
 
-              .team__member__desc
-                | Moya vyorstka w dele - brauzeri vspoteli! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde assumenda ullam culpa consectetur alias, blanditiis reprehenderit, harum quod impedit ut, quidem pariatur maiores voluptate? Aperiam magni adipisci molestiae ipsam reprehenderit?
+              .team__member__desc(itemprop='knows')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum dolorem itaque maiores sint? Ducimus quod, ea enim, nobis beatae illo numquam nulla maxime, vel soluta a animi! Pariatur, praesentium, est.
 
     section.projects#projects
       .section-title
         h1 Projects
         .container
           .row
-            .col-md-6 Join Kaliningrad
-            .col-md-6 Postcardbox
+            .col-sm-6
+              .project
+                .projects__title
+                  h2
+                    a(href='https://joinkaliningrad.ru/') Join Kaliningrad
+
+                img.projects__logo(src='', alt='Join Kaliningrad')
+
+                .projects__description
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum voluptatibus, earum sunt dolor, iure et quidem consequatur qui corporis adipisci quibusdam. Debitis alias velit sapiente quam cupiditate, accusamus. Quasi, molestiae.
+
+            .col-sm-6
+              .project
+                .projects__title
+                  h2
+                    a(href='https://postcardbox.ru/') Postcardbox
+
+                img.projects__logo(src='', alt='Postcardbox')
+
+                .projects__description
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. At optio consectetur est voluptas perferendis, dignissimos repellendus culpa atque. Cupiditate a eligendi consequatur! Quis facere ut porro possimus suscipit maxime itaque.
 
     section.contacts#contacts
       .section-title

@@ -1,5 +1,27 @@
 .projects
   box-sizing border-box
-  padding 20px
   background mix(#222, $brown, 60%)
   color #fff
+
+  &__title
+    a
+      color #fff
+      cursor pointer
+
+  &__logo
+    margin 20px 0
+
+  &__description
+    text-align left
+
+// Wrapper
+.project
+  @media (max-width $xs)
+    max-width 300px
+    margin auto
+
+  &:first-child
+    @media (max-width $xs)
+      margin-bottom 20px
+      padding-bottom 10px
+      border-bottom 1px solid $brown
